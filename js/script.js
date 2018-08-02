@@ -24,7 +24,7 @@ function btn2(){append("2");}
 function btn3(){append("3");}
 function btn4(){append("4");}
 function btn5(){append("5");}
-function btn6(){append("5");}
+function btn6(){append("6");}
 function btn7(){append("7");}
 function btn8(){append("8");}
 function btn9(){append("9");}
