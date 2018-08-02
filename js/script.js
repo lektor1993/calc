@@ -1,4 +1,5 @@
 var score="0";
+var comma=false;
 var tmp;
 
 function append(value){
@@ -28,15 +29,14 @@ function btn7(){append("7");}
 function btn8(){append("8");}
 function btn9(){append("9");}
 function btn0(){append("0");}
-function btn_add(){append("+");}
-function btn_substract(){append("-");}
-function btn_multiply(){append("*");}
-function btn_divide(){append("/");}
+function btn_add(){append("+"); comma=false;}
+function btn_substract(){append("-");comma=false;}
+function btn_multiply(){append("*");comma=false;}
+function btn_divide(){append("/");comma=false;}
 function btn_comma(){
 		console.log(score);
-	if (score.indexOf('.')==(-1)){
-	append(".");
-}
+	if(comma==false){append(".");}
+	comma=true;
 }
 
 function btn_pow(){
