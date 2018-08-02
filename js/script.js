@@ -1,155 +1,84 @@
-var score=null;
-var score2=null;
+var score="0";
 var tmp;
-var tmp2="smth";
-var character;
 
 function append(value){
+	if (score=="0"){
+	score=value;
+	}
+	else{
 	tmp=score.toString();
 	score=tmp.concat(value);
+	}
+	console.log(score);
+	document.getElementById("score_textarea").innerHTML=score;
 }
 function btn_clear(){
-	score=0;
+	score="0";
 	console.log("cleared");
-	document.getElementById("score_textarea").innerHTML=score.toString();
+	document.getElementById("score_textarea").innerHTML=score;
+
 }
-function btn1(){
-if (score==null){score=1;
-console.log(score);
-}
-else{
-	append("1");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn2(){
-if (score==null){score=2;
-console.log(score);
-}
-else{
-	append("2");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn3(){
-if (score==null){score=3;
-console.log(score);
-}
-else{
-	append("3");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn4(){
-if (score==null){score=4;
-console.log(score);
-}
-else{
-	append("4");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn5(){
-if (score==null){score=5;
-console.log(score);
-}
-else{
-	append("5");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn6(){
-if (score==null){score=6;
-console.log(score);
-}
-else{
-	append("6");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn7(){
-if (score==null){score=7;
-console.log(score);
-}
-else{
-	append("7");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn8(){
-if (score==null){score=8;
-console.log(score);
-}
-else{
-	append("8");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn9(){
-if (score==null){score=9;
-console.log(score);
-}
-else{
-	append("9");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn0(){
-if (score==null){score=0;
-console.log(score);
-}
-else{
-	append("0");
-	console.log(score);
-}
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
+function btn1(){append("1");}
+function btn2(){append("2");}
+function btn3(){append("3");}
+function btn4(){append("4");}
+function btn5(){append("5");}
+function btn6(){append("5");}
+function btn7(){append("7");}
+function btn8(){append("8");}
+function btn9(){append("9");}
+function btn0(){append("0");}
+function btn_add(){append("+");}
+function btn_substract(){append("-");}
+function btn_multiply(){append("*");}
+function btn_divide(){append("/");}
 function btn_comma(){
-if (score==null){score=0;
-console.log(score);
-}
-else{
-	console.log(score.indexOf('.') );
+		console.log(score);
 	if (score.indexOf('.')==(-1)){
 	append(".");
-	console.log(score);
 }
 }
-document.getElementById("score_textarea").innerHTML=score.toString();
-}
-function btn_sign(){
-	score=parseFloat(score);
-score=-score;
-score=score.toString();
+
+function btn_pow(){
+	score=math.pow(parseFloat(score),2);
 	document.getElementById("score_textarea").innerHTML=score.toString();
-	console.log(score);
+}
+
+function btn_sqrt(){
+	score=math.sqrt(parseFloat(score));
+	document.getElementById("score_textarea").innerHTML=score.toString();
 }
 
 function btn_backspace(){
+	
 	score=score.slice(0,-1);
 		console.log(score);
 		document.getElementById("score_textarea").innerHTML=score.toString();
 }
+function btn_equals(){
+	document.getElementById("score_textarea").innerHTML=score +"="+ math.eval(score) ;
+	score=math.eval(score);
+	score=score.toString();
+	}
+
+document.body.onkeyup=function(e){
+	switch(e.keyCode){
+		case 13: btn_equals(); break;
+		case 46: btn_backspace(); break;
+		default: break;
+	}
+}
 
 document.body.onkeypress=function(e){
-console.log(e.charCode);
-console.log(e.keyCode);
-	if(e.charCode==0){tmp=e.keyCode;}
-	else {tmp=e.charCode}
-	switch(tmp){
+	switch(e.charCode){
 		case 8:btn_backspace();break;
 		case 32:btn_clear();break;
+		case 42:btn_multiply();break;
+		case 43:btn_add();break;
 		case 44:btn_comma();break;
+		case 45:btn_substract();break;
 		case 46:btn_comma();break;
+		case 47:btn_divide();break;
 		case 48:btn0(); break;
 		case 49:btn1();break;
 		case 50:btn2();break;
@@ -160,55 +89,33 @@ console.log(e.keyCode);
 		case 55:btn7();break;
 		case 56:btn8();break;
 		case 57:btn9();break;
+		case 61:btn_equals();break;
 		default: break;
 	}
 
 }
 
 
-document.getElementById("btn1").addEventListener("click", function(){
-btn1();
-}); 
-document.getElementById("btn2").addEventListener("click", function(){
-btn2();
-}); 
-document.getElementById("btn3").addEventListener("click", function(){
-btn3();
-}); 
-document.getElementById("btn4").addEventListener("click", function(){
-btn4();
-}); 
-document.getElementById("btn5").addEventListener("click", function(){
-btn5();
-}); 
-document.getElementById("btn6").addEventListener("click", function(){
-btn6();
-}); 
-document.getElementById("btn7").addEventListener("click", function(){
-btn7();
-});
-document.getElementById("btn8").addEventListener("click", function(){
-btn8();
-}); 
-document.getElementById("btn9").addEventListener("click", function(){
-btn9();
-}); 
-document.getElementById("btn0").addEventListener("click", function(){
-btn0();
-});  
-document.getElementById("btn_clear").addEventListener("click",function(){
-	btn_clear();
-});
-document.getElementById("btn_sign").addEventListener("click",function(){
-	btn_sign();
-});
-document.getElementById("btn_comma").addEventListener("click",function(){
-	btn_comma();
-});
-
-document.getElementById("btn_backspace").addEventListener("click",function(){
-	btn_backspace();
-});
+document.getElementById("btn1").addEventListener("click", function(){btn1();}); 
+document.getElementById("btn2").addEventListener("click", function(){btn2();}); 
+document.getElementById("btn3").addEventListener("click", function(){btn3();}); 
+document.getElementById("btn4").addEventListener("click", function(){btn4();}); 
+document.getElementById("btn5").addEventListener("click", function(){btn5();}); 
+document.getElementById("btn6").addEventListener("click", function(){btn6();}); 
+document.getElementById("btn7").addEventListener("click", function(){btn7();});
+document.getElementById("btn8").addEventListener("click", function(){btn8();}); 
+document.getElementById("btn9").addEventListener("click", function(){btn9();}); 
+document.getElementById("btn0").addEventListener("click", function(){btn0();});  
+document.getElementById("btn_equals").addEventListener("click", function(){btn_equals();});  
+document.getElementById("btn_add").addEventListener("click", function(){btn_add();});  
+document.getElementById("btn_substract").addEventListener("click", function(){btn_substract();});  
+document.getElementById("btn_multiply").addEventListener("click", function(){btn_multiply();});  
+document.getElementById("btn_divide").addEventListener("click", function(){btn_divide();});  
+document.getElementById("btn_clear").addEventListener("click",function(){btn_clear();});
+document.getElementById("btn_comma").addEventListener("click",function(){btn_comma();});
+document.getElementById("btn_backspace").addEventListener("click",function(){btn_backspace();});
+document.getElementById("btn_pow").addEventListener("click",function(){btn_pow();});
+document.getElementById("btn_sqrt").addEventListener("click",function(){btn_sqrt();});
 
 
 

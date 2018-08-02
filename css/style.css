@@ -31,6 +31,10 @@ textarea{
   border-radius: 3px;
 }
 
+.f{
+	background-color:black;
+}
+
 .btn:hover{
 	transition:0.5s;
 	background-color:orange;
@@ -43,4 +47,8 @@ textarea{
 
 .btn_clear{
 	background-color:red;
+}
+
+.equals{
+	background-color:green;
 }
