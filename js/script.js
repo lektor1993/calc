@@ -29,10 +29,22 @@ function btn7(){append("7");}
 function btn8(){append("8");}
 function btn9(){append("9");}
 function btn0(){append("0");}
-function btn_add(){append("+"); comma=false;}
-function btn_substract(){append("-");comma=false;}
-function btn_multiply(){append("*");comma=false;}
-function btn_divide(){append("/");comma=false;}
+function btn_add(){
+	if (score.slice(-1)=="+" ||score.slice(-1)=="*" || score.slice(-1)=="/" ){}
+	else{	append("+"); comma=false;}
+	}
+function btn_substract(){
+	if (score.slice(-1)=="-"){}
+	else{	append("-"); comma=false;}
+	}
+function btn_multiply(){
+	if (score.slice(-1)=="+" ||score.slice(-1)=="*" || score.slice(-1)=="/" || score.slice(-1)=="-" ){}
+	else{	append("*"); comma=false;}
+	}
+function btn_divide(){
+		if (score.slice(-1)=="+" ||score.slice(-1)=="*" || score.slice(-1)=="/" || score.slice(-1)=="-" ){}
+	else{	append("/"); comma=false;}
+	}
 function btn_comma(){
 		console.log(score);
 	if(comma==false){append(".");}
@@ -41,12 +53,13 @@ function btn_comma(){
 
 function btn_pow(){
 	score=math.pow(parseFloat(score),2);
-	document.getElementById("score_textarea").innerHTML=score.toString();
+	score=score.toString();
+	document.getElementById("score_textarea").innerHTML=score;
 }
 
 function btn_sqrt(){
 	score=math.sqrt(parseFloat(score));
-	document.getElementById("score_textarea").innerHTML=score.toString();
+	document.getElementById("score_textarea").innerHTML=score;
 }
 
 function btn_backspace(){
@@ -56,9 +69,11 @@ function btn_backspace(){
 		document.getElementById("score_textarea").innerHTML=score.toString();
 }
 function btn_equals(){
-	document.getElementById("score_textarea").innerHTML=score +"="+ math.eval(score) ;
 	score=math.eval(score);
 	score=score.toString();
+	console.log(score);
+	if(score=="Infinity"){document.getElementById("score_textarea").innerHTML="YOU CANT DIVIDE BY 0!";score="0";}
+	else{document.getElementById("score_textarea").innerHTML=score;}
 	}
 
 document.body.onkeyup=function(e){
