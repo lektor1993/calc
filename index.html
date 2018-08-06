@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html">
   <title>Calc</title>
   <meta name="description" content="More than simple calculator...">
   <meta name="author" content="Lektor">
@@ -11,56 +10,53 @@
 </head>
 
 <body>
-
-<section>
-
-
-<table align="middle">
-<tr>
-<th colspan=1 align="left">TOMCO</th>
-<th colspan=3 align="right">3000+</textarea></th>
+<table>
+<tr id="brand">
+<th id="left"	 colspan=1>TOMCO</th>
+<th id="right" colspan=3>3000+</th>
 </tr>
-<tr><th colspan=4><textarea readonly id="score_textarea"></textarea></th></tr>
-<tr>
 
-<th><button type="button" class="btn btn_clear" id="btn_clear">C</button></th>
-<th><button type="button" class="btn btn_clear" id="btn_backspace">&#8592</button></th>
-<th><button type="button" class="btn f" id="btn_pow">x&#xb2</button></th>
-<th><button type="button" class="btn f" id="btn_sqrt">&#x221a</button></th>
+
+<tr>
+<th colspan=4  id="score_textarea" class="score">0</th>
 </tr>
 
 <tr>
-<th><button type="button" class="btn" id="btn7">7</button></th>
-<th><button type="button" class="btn" id="btn8">8</button></th>
-<th><button type="button" class="btn" id="btn9">9</button></th>
-<th><button type="button" class="btn f" id="btn_multiply">*</button></th>
+<th class="btn btn_clear" 	id="btn_clear">C</th>
+<th class="btn btn_clear" 	id="btn_backspace">&#8592;</th>
+<th class="btn f" 				id="btn_pow" >x&#xb2;</th>
+<th class="btn f"  				id="btn_sqrt">&#x221a;</th>
 </tr>
 
 <tr>
-<th><button type="button" class="btn" id="btn4">4</button></th>
-<th><button type="button" class="btn" id="btn5">5</button></th>
-<th><button type="button" class="btn" id="btn6">6</button></th>
-<th><button type="button" class="btn f" id="btn_divide">/</button></th>
+<th class="btn" id="btn7">7</th>
+<th class="btn" id="btn8">8</th>
+<th class="btn" id="btn9">9</th>
+<th class="btn f" id="btn_multiply">*</th>
 </tr>
 
 <tr>
-<th><button type="button" class="btn" id="btn1">1</button></th>
-<th><button type="button" class="btn" id="btn2">2</button></th>
-<th><button type="button" class="btn" id="btn3">3</button></th>
-<th><button type="button" class="btn f" id="btn_substract">-</button></th>
-
+<th class="btn" id="btn4">4</th>
+<th class="btn" id="btn5">5</th>
+<th class="btn" id="btn6">6</th>
+<th class="btn f" id="btn_divide">/</th>
 </tr>
 
 <tr>
-<th><button type="button" class="btn" id="btn0">0</button></th>
-<th><button type="button" class="btn f" id="btn_comma">,</button></th>
-<th><button type="button" class="btn equals" id="btn_equals">=</button></th>
-<th><button type="button" class="btn f" id="btn_add">+</button></th>
-
-
+<th class="btn" id="btn1">1</th>
+<th class="btn" id="btn2">2</th>
+<th class="btn" id="btn3">3</th>
+<th class="btn f" id="btn_substract">-</th>
 </tr>
+
+<tr>
+<th class="btn" id="btn0">0</th>
+<th class="btn f" id="btn_comma">,</th>
+<th class="btn equals" id="btn_equals">=</th>
+<th class="btn f" id="btn_add">+</th>
+</tr>
+
 </table>
-</section>
 
   <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.4/math.min.js"></script>

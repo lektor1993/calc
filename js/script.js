@@ -63,10 +63,10 @@ function btn_sqrt(){
 }
 
 function btn_backspace(){
-	
-	score=score.slice(0,-1);
+	if (score.length>1){	score=score.slice(0,-1);
 		console.log(score);
 		document.getElementById("score_textarea").innerHTML=score.toString();
+		}
 }
 function btn_equals(){
 	score=math.eval(score);
