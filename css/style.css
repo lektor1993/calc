@@ -5,13 +5,15 @@ border-color : rgb(0, 0, 0);
 border-style : solid;
 border-width : 10px;
 border-radius : 20px;
-margin:0 auto;
+height: 100%;
 width:100%;
 max-width:600px;
+max-height: 1000px;
 color : black;
 font-family : digital_italic;
 font-weight : bold;
 font-size : 26px;
+margin: auto auto;
 }
 
 .row{
@@ -48,9 +50,8 @@ text-align : right;
 
 .btn{
 padding:15px;
-margin:2.5px;
+margin:5px;
 width:25%;
-height:20%;
 text-align : center;
 }
 
