@@ -1,9 +1,27 @@
 # calc
+
 vanilla JS calculator - simple as that
 
-Live preview: https://tomaszlektorowski.github.io/calc/
+Technologies used:
+HTML5,
+CSS3,
+JS (ES5),
+BOOTSTRAP,
+JQUERY
+
+
+## Getting Started
 
 Fully functional calculator with both mouse and keyboard support. It also have ability to both slice number from the end of the result and remove it completely. 
-Responsive, doesn't need additional tools or files.
+This project does not require any form of installation - just use it as GitHub Pages Live Preview: 
+https://tomaszlektorowski.github.io/calc/
 
-Usage: download as zip file, then unzip it on your HDD, use git clone or use github pages preview
+
+## Author
+
+Tomasz Lektorowski
+
+
+## License
+
+This project is licensed under the MIT License
